@@ -14,6 +14,6 @@ Prefix "$"
 * nuke - Deletes every channel and makes new one(ADMIN ONLY). `$nuke 5 5`
 * pingsend - Send pings in specified ammount of channels specified ammount of times(ADMIN ONLY). `$pingsend Whatever 5 5`
 * spamchannels - Makes channels the user specified amount of times(ADMIN ONLY). `$spamchannels 5`
-* deleteallchannels = Deletes all channels and re makes general(ADMIN ONLY).
-
+* deleteallchannels - Deletes all channels and re makes general(ADMIN ONLY).
+* massrole - Makes a large amount of roles(ADMIN ONLY). `$massrole 5`
 open source
