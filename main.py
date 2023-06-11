@@ -19,7 +19,7 @@ logo = """
 ██║     ██║   ██║██╔══██╗██║╚██╗██║██║███╗██║██╔══██║██║     ██║           
 ╚██████╗╚██████╔╝██║  ██║██║ ╚████║╚███╔███╔╝██║  ██║███████╗███████╗      
  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚══════╝╚══════╝ 
-               By 0x069#2442 12 cmds v1
+               By 0x069#2442 Cornelius Cornwall Utility v1.1
 """
 
 banner = fade.fire(logo)
@@ -45,7 +45,8 @@ Prefix "$"
 * nuke - Deletes every channel and makes new one(ADMIN ONLY). `$nuke 5 5`
 * pingsend - Send pings in specified ammount of channels specified ammount of times(ADMIN ONLY). `$pingsend Whatever 5 5`
 * spamchannels - Makes channels the user specified amount of times(ADMIN ONLY). `$spamchannels 5`
-* deleteallchannels = Deletes all channels and re makes general(ADMIN ONLY).
+* deleteallchannels - Deletes all channels and re makes general(ADMIN ONLY).
+* massrole - Makes a large amount of roles(ADMIN ONLY). `$massrole 5`
 """
 @client.event
 async def on_ready():
@@ -196,4 +197,10 @@ async def deleteallchannels(ctx):
     await new_channel.send(f"Channels deleted by {ctx.author.mention}")
     print(f"All Channels Deleted")
 
+@client.command()
+async def massrole(ctx, num_roles: int):
+    for i in range(num_roles):
+        await ctx.guild.create_role(name=i+1)
+    
+   
 client.run(token)
