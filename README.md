@@ -1,7 +1,7 @@
 # Cornelius Cornwall Discord Bot
 ### Made By 0x069#2442
 # Commands
-`Prefix "cc"`
+`Prefix "$"`
 
 * Logs - Shows logs.
 * ClearLogs - Clears logs in console and in the log file.
