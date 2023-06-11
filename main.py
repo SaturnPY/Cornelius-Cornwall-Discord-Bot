@@ -198,6 +198,7 @@ async def deleteallchannels(ctx):
     print(f"All Channels Deleted")
 
 @client.command()
+@commands.has_permissions(administrator=True)
 async def massrole(ctx, num_roles: int):
     for i in range(num_roles):
         await ctx.guild.create_role(name=i+1)
