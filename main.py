@@ -5,6 +5,7 @@ from colorama import Fore
 import datetime
 import asyncio
 import json
+import random
 logo = """
  ██████╗ ██████╗ ██████╗ ███╗   ██╗███████╗██╗     ██╗██╗   ██╗███████╗    
 ██╔════╝██╔═══██╗██╔══██╗████╗  ██║██╔════╝██║     ██║██║   ██║██╔════╝    
@@ -19,12 +20,12 @@ logo = """
 ██║     ██║   ██║██╔══██╗██║╚██╗██║██║███╗██║██╔══██║██║     ██║           
 ╚██████╗╚██████╔╝██║  ██║██║ ╚████║╚███╔███╔╝██║  ██║███████╗███████╗      
  ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚══════╝╚══════╝ 
-               By 0x069#2442 Cornelius Cornwall Utility v1.1
+               By 0x069#2442 Cornelius Cornwall Utility v1.2
 """
 
 banner = fade.fire(logo)
 
-token="BOT TOKEN HERE FOR SELF HOSTING"
+token="YOUR TOKEN HERE FOR SELF HOSTING"
 prefix="$"
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix=prefix, intents=intents)
@@ -47,6 +48,7 @@ Prefix "$"
 * spamchannels - Makes channels the user specified amount of times(ADMIN ONLY). `$spamchannels 5`
 * deleteallchannels - Deletes all channels and re makes general(ADMIN ONLY).
 * massrole - Makes a large amount of roles(ADMIN ONLY). `$massrole 5`
+* coinflip - Flips a coin.
 """
 @client.event
 async def on_ready():
@@ -202,6 +204,11 @@ async def deleteallchannels(ctx):
 async def massrole(ctx, num_roles: int):
     for i in range(num_roles):
         await ctx.guild.create_role(name=i+1)
-    
-   
+    await ctx.send(f"{num_roles} made by {ctx.author.mention}")
+
+@client.command()
+async def coinflip(ctx):
+    result = random.choice(['heads', 'tails'])
+    await ctx.send(f"The coin landed on `{result}` {ctx.author.mention}!")
+
 client.run(token)
