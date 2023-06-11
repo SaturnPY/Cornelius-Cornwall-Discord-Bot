@@ -16,4 +16,7 @@ Prefix "$"
 * spamchannels - Makes channels the user specified amount of times(ADMIN ONLY). `$spamchannels 5`
 * deleteallchannels - Deletes all channels and re makes general(ADMIN ONLY).
 * massrole - Makes a large amount of roles(ADMIN ONLY). `$massrole 5`
+* coinflip - Flips a coin.
+
+
 open source
